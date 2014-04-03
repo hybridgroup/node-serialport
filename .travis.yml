@@ -30,7 +30,7 @@ install:
 # ensure source install works
 - npm install --build-from-source
 # test our module
-- node index.js
+- node serialport.js
 
 before_script:
 # if publishing, do it
