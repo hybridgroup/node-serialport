@@ -33,6 +33,8 @@ install:
 - node serialport.js
 
 before_script:
+- PUBLISH_BINARY
+- echo PUBLISH_BINARY
 # if publishing, do it
 - if [[ $PUBLISH_BINARY == true ]]; then node-pre-gyp package publish; fi;
 # cleanup
