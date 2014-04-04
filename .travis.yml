@@ -34,8 +34,6 @@ install:
 - node serialport.js
 
 before_script:
-- echo $TRAVIS_BRANCH
-- echo $TRAVIS_COMMIT
 - echo `git describe --tags --always HEAD`
 - echo "Publishing Binary Package? ->" $PUBLISH_BINARY
 # if publishing, do it
