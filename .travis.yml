@@ -34,8 +34,7 @@ install:
 - node serialport.js
 
 before_script:
-- echo `git describe --tags --always HEAD`
-- echo "Publishing Binary Package? ->" $PUBLISH_BINARY
+- echo "Publishing native platform Binary Package? ->" $PUBLISH_BINARY
 # if publishing, do it
 - if [[ $PUBLISH_BINARY == true ]]; then node-pre-gyp package publish; fi;
 # cleanup
@@ -63,7 +62,8 @@ script:
 - if [[ "$platform" == 'linux' ]]; then CC=gcc-4.6 CXX=g++-4.6 npm install --build-from-source; else npm install --build-from-source; fi
 - npm test
 # publish 32 bit build
-- if [[ $PUBLISH == true ]]; then node-pre-gyp package publish; fi;
+- echo "Publishing x86 32bit Binary Package? ->" $PUBLISH_BINARY
+- if [[ $PUBLISH_BINARY == true ]]; then node-pre-gyp package publish; fi;
 
 after_success:
 # if success then query and display all published binaries
