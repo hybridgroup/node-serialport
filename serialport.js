@@ -3,8 +3,7 @@
 
 // Copyright 2011 Chris Williams <chris@iterativedesigns.com>
 
-//var SerialPortBinding = require("bindings")("serialport.node");
-// Require serialport binding from pre-compiled bunaries using
+// Require serialport binding from pre-compiled binaries using
 // node-pre-gyp, if something fails or package not available fallback
 // to regular build from source.
 var binary = require('node-pre-gyp');
